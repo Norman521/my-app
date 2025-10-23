@@ -1,5 +1,5 @@
 import React from "react";
-import "./portfolio.css";
+import "../css/portfolio.css";
 
 const categories = [
   { label: "All", value: "", isActive: false },
