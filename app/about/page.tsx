@@ -2,16 +2,14 @@ import Image from "next/image";
 import Welcome from "../../components/welcome";
 import Link from "next/link";
 import Navbar from "../../components/navbar";
+import Team from "../../components/about";
 
 export default function Home() {
   return (
     <>
       <div>
         <Navbar />
-        <Welcome text="This is the about page " />
-        <Welcome text="Hello, World!" />
-        <Welcome text="This is a message." />
-        <Welcome text="Have a great day!" author="Norman" />
+        <Team />
       </div>
     </>
   );

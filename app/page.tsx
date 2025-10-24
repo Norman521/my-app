@@ -3,19 +3,13 @@ import Welcome from "../components/welcome";
 import Link from "next/link";
 import Navbar from "../components/navbar";
 import Portfolio from "../components/portfolio";
-
-const categories = [
-  { label: "All", value: "", isActive: false },
-  { label: "Branding", value: "Branding", isActive: true },
-  { label: "Code", value: "Code", isActive: false },
-  { label: "Marketing", value: "Marketing", isActive: false },
-];
+import About from "../components/about";
 
 const portfolioList = [
   {
     image: "https://cdn.easyfrontend.com/pictures/portfolio/portfolio32.jpg",
     title: "Project Title 1",
-    categories: ["Branding", "Code"],
+    categories: ["Branding", "Marketing"],
   },
   {
     image: "https://cdn.easyfrontend.com/pictures/portfolio/portfolio31.jpg",
@@ -30,7 +24,7 @@ const portfolioList = [
   {
     image: "https://cdn.easyfrontend.com/pictures/portfolio/portfolio29.jpg",
     title: "Project Title 4",
-    categories: ["Code", "Marketing"],
+    categories: ["Branding", "Marketing"],
   },
   {
     image: "https://cdn.easyfrontend.com/pictures/portfolio/portfolio28.jpg",
@@ -40,7 +34,7 @@ const portfolioList = [
   {
     image: "https://cdn.easyfrontend.com/pictures/portfolio/portfolio27.jpg",
     title: "Project Title 6",
-    categories: ["Code"],
+    categories: ["Branding"],
   },
   {
     image: "https://cdn.easyfrontend.com/pictures/portfolio/portfolio26.jpg",
@@ -60,16 +54,8 @@ export default function Home() {
       <div>
         <Navbar />
       </div>
-
       <div>
-        <Welcome text="This is the home page" />
-        <Welcome text="Hello, World!" />
-        <Welcome text="This is a message." />
-        <Welcome text="Have a great day!" author="Norman" />
-      </div>
-
-      <div>
-        <Portfolio categories={categories} items={portfolioList} />
+        <Portfolio categories={[]} items={portfolioList} />
       </div>
     </>
   );

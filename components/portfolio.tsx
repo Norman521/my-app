@@ -19,9 +19,10 @@ export default function Portfolio({ categories, items }: PortfolioProps) {
             <div className="portfolio-intro">
               <h2 className="portfolio-title">My Latest Works</h2>
               <p className="portfolio-description">
-                It’s easier to reach your savings goals when you have the right
-                savings account. It’s easier to reach your savings goals when
-                you have the right savings account.
+                A showcase of my recent projects across various domains. Feel
+                free to explore and get inspired! I work on web apps, mobile
+                apps, UI/UX designs, and open-source tools — combining clean
+                design with performant code.
               </p>
 
               <div className="portfolio-categories">
