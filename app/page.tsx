@@ -5,37 +5,52 @@ import Navbar from "../components/navbar";
 import Portfolio from "../components/portfolio";
 
 const categories = [
-  { label: "All", value: "" },
+  { label: "All", value: "", isActive: false },
   { label: "Branding", value: "Branding", isActive: true },
-  { label: "Code", value: "Code" },
-  { label: "Marketing", value: "Marketing" },
+  { label: "Code", value: "Code", isActive: false },
+  { label: "Marketing", value: "Marketing", isActive: false },
 ];
 
 const portfolioList = [
   {
-    image: "/portfolio-1.jpg",
+    image: "https://cdn.easyfrontend.com/pictures/portfolio/portfolio32.jpg",
     title: "Project Title 1",
     categories: ["Branding", "Code"],
   },
   {
-    image: "/portfolio-2.jpg",
+    image: "https://cdn.easyfrontend.com/pictures/portfolio/portfolio31.jpg",
     title: "Project Title 2",
     categories: ["Marketing"],
   },
   {
-    image: "/portfolio-3.jpg",
+    image: "https://cdn.easyfrontend.com/pictures/portfolio/portfolio30.jpg",
     title: "Project Title 3",
     categories: ["Branding"],
   },
   {
-    image: "/portfolio-4.jpg",
+    image: "https://cdn.easyfrontend.com/pictures/portfolio/portfolio29.jpg",
     title: "Project Title 4",
     categories: ["Code", "Marketing"],
   },
   {
-    image: "/portfolio-5.jpg",
+    image: "https://cdn.easyfrontend.com/pictures/portfolio/portfolio28.jpg",
     title: "Project Title 5",
     categories: ["Branding", "Marketing"],
+  },
+  {
+    image: "https://cdn.easyfrontend.com/pictures/portfolio/portfolio27.jpg",
+    title: "Project Title 6",
+    categories: ["Code"],
+  },
+  {
+    image: "https://cdn.easyfrontend.com/pictures/portfolio/portfolio26.jpg",
+    title: "Project Title 7",
+    categories: ["Branding", "Code"],
+  },
+  {
+    image: "https://cdn.easyfrontend.com/pictures/portfolio/portfolio25.jpg",
+    title: "Project Title 8",
+    categories: ["Marketing"],
   },
 ];
 

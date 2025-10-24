@@ -1,57 +1,16 @@
+// components/Portfolio.tsx
 import React from "react";
 import "../css/portfolio.css";
 
-const categories = [
-  { label: "All", value: "", isActive: false },
-  { label: "Branding", value: "Branding", isActive: true },
-  { label: "Code", value: "Code", isActive: false },
-  { label: "Marketing", value: "Marketing", isActive: false },
-];
+type Category = { label: string; value: string; isActive?: boolean };
+type Item = { image: string; title: string; categories: string[] };
 
-const portfolioList = [
-  {
-    image: "https://cdn.easyfrontend.com/pictures/portfolio/portfolio32.jpg",
-    title: "Marketing",
-    categories: ["Digital Marketing"],
-  },
-  {
-    image: "https://cdn.easyfrontend.com/pictures/portfolio/portfolio31.jpg",
-    title: "Management",
-    categories: ["Content Writing"],
-  },
-  {
-    image: "https://cdn.easyfrontend.com/pictures/portfolio/portfolio30.jpg",
-    title: "Branding",
-    categories: ["Product Design"],
-  },
-  {
-    image: "https://cdn.easyfrontend.com/pictures/portfolio/portfolio29.jpg",
-    title: "Web Portal Dev",
-    categories: ["UI/UX Design"],
-  },
-  {
-    image: "https://cdn.easyfrontend.com/pictures/portfolio/portfolio28.jpg",
-    title: "Web Portal Dev",
-    categories: ["UI/UX Design"],
-  },
-  {
-    image: "https://cdn.easyfrontend.com/pictures/portfolio/portfolio27.jpg",
-    title: "Customization",
-    categories: ["Theme Development"],
-  },
-  {
-    image: "https://cdn.easyfrontend.com/pictures/portfolio/portfolio26.jpg",
-    title: "Web Portal Dev",
-    categories: ["UI/UX Design"],
-  },
-  {
-    image: "https://cdn.easyfrontend.com/pictures/portfolio/portfolio25.jpg",
-    title: "Development",
-    categories: ["Editor Expert"],
-  },
-];
+type PortfolioProps = {
+  categories: Category[];
+  items: Item[];
+};
 
-export default function Portfolio() {
+export default function Portfolio({ categories, items }: PortfolioProps) {
   return (
     <section className="portfolio-section">
       <div className="portfolio-container">
@@ -81,7 +40,7 @@ export default function Portfolio() {
               </div>
             </div>
 
-            {portfolioList.slice(0, 2).map((item, i) => (
+            {items.slice(0, 2).map((item, i) => (
               <div className="portfolio-card" key={i}>
                 <img src={item.image} alt={item.title} />
                 <div className="portfolio-overlay">
@@ -93,7 +52,7 @@ export default function Portfolio() {
           </div>
 
           <div className="portfolio-column">
-            {portfolioList.slice(2, 5).map((item, i) => (
+            {items.slice(2, 5).map((item, i) => (
               <div className="portfolio-card" key={i}>
                 <img src={item.image} alt={item.title} />
                 <div className="portfolio-overlay">
@@ -105,7 +64,7 @@ export default function Portfolio() {
           </div>
 
           <div className="portfolio-column">
-            {portfolioList.slice(5, 8).map((item, i) => (
+            {items.slice(5, 8).map((item, i) => (
               <div className="portfolio-card" key={i}>
                 <img src={item.image} alt={item.title} />
                 <div className="portfolio-overlay">
