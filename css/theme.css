@@ -1,0 +1,148 @@
+/* =========================
+   Global Theme / Base Styles
+   ========================= */
+
+:root {
+  /* Brand palette */
+  --color-bg: #ffffff;
+  --color-surface: #ffffff;
+  --color-text: #0f172a;           /* dark slate */
+  --color-muted: #334155;          /* slate-700 */
+  --color-border: #e5e7eb;         /* neutral border */
+  --color-primary: #2563eb;        /* blue-600 */
+  --color-primary-weak: rgba(37, 99, 235, 0.2);
+
+  /* Radii */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+
+  /* Shadows */
+  --shadow-soft: 0 10px 30px rgba(0,0,0,0.06);
+  --shadow-card: 0 12px 30px rgba(2,8,20,0.10);
+  --shadow-primary: 0 8px 20px rgba(37,99,235,0.25);
+
+  /* Type scale */
+  --font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  --fs-title-lg: 45px;
+  --fs-title: 2rem;
+  --fs-body: 1rem;
+  --fs-lead: 1.125rem;
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --section-y: 3.5rem;     /* mobile section padding */
+  --section-y-md: 6rem;    /* md+ section padding */
+}
+
+/* ===== Sticky footer layout ===== */
+html, body { height: 100%; }
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-family);
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+.site-main { flex: 1 0 auto; }
+.site-footer { flex-shrink: 0; }
+
+img { max-width: 100%; height: auto; display: block; }
+
+/* ===== Shared layout helpers ===== */
+.section {
+  background: var(--color-bg);
+  color: var(--color-text);
+  padding: var(--section-y) 0;
+}
+@media (min-width: 768px) {
+  .section { padding: var(--section-y-md) 0; }
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+}
+
+/* ===== Shared typography ===== */
+.heading {
+  font-size: var(--fs-title);
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin: 0 0 var(--space-3) 0;
+}
+@media (min-width: 768px) {
+  .heading { font-size: var(--fs-title-lg); }
+}
+.subheading, .intro {
+  font-size: var(--fs-lead);
+  color: var(--color-muted);
+  margin: 0 0 var(--space-8) 0;
+}
+
+/* ===== Shared card ===== */
+.card {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-6);
+}
+@media (min-width: 768px) {
+  .card { padding: var(--space-12); }
+}
+
+/* ===== Form controls ===== */
+.input {
+  width: 100%;
+  min-height: 48px;
+  padding: 0.75rem 1rem;
+  line-height: 1.4;
+  background: #f6f9ff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  outline: none;
+  color: var(--color-text);
+  transition: border-color .15s, box-shadow .15s, background .15s;
+}
+.input::placeholder { color: #64748b; }
+.input:focus {
+  background: #fff;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-weak);
+}
+
+/* ===== Buttons ===== */
+.btn {
+  appearance: none;
+  background: var(--color-primary);
+  color: #fff;
+  border: 0;
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 2rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: var(--shadow-primary);
+  transition: opacity .2s, transform .06s, box-shadow .15s;
+}
+.btn:hover { opacity: .95; }
+.btn:active { transform: translateY(1px); }
+
+/* ===== Simple grid helper (used by multiple pages) ===== */
+.grid-12 { display: grid; gap: 1.5rem; }
+@media (min-width: 1024px) {
+  .grid-12 { grid-template-columns: 7fr 5fr; align-items: stretch; }
+}
+
+/* (Optional) Dark mode example if you ever enable it:
+html.dark { --color-bg:#0b1727; --color-surface:#162231; --color-text:#ffffff; --color-muted:#a9b1bd; --color-border:#243244; }
+*/

@@ -1,40 +1,25 @@
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  box-sizing: border-box;
-}
-
-/* Page background */
-body {
-  background: #000000;
-  color: #ebebeb;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-/* Navbar container */
-nav {
+/* Navbar base */
+.main-nav {
   width: 100%;
-  background: #000000;
+  background: #000;          /* dark bar, but no body override */
   position: sticky;
   top: 0;
   z-index: 10;
 }
 
 /* Navbar list */
-ul {
+.main-nav ul {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: var(--space-4);
   max-width: 1000px;
   margin: 0 auto;
-  padding: 1rem 2rem;
+  padding: var(--space-4) var(--space-8);
 }
 
-/* List items */
-li {
+/* Items */
+.main-nav li {
   padding: 0.75rem 1.5rem;
   text-transform: uppercase;
   color: #ebebeb;
@@ -43,8 +28,8 @@ li {
   transition: all 0.3s ease;
 }
 
-/* Hover animation (original effect restored) */
-li:hover {
+/* Hover effect (kept) */
+.main-nav li:hover {
   background-image: url("https://scottyzen.sirv.com/Images/v/button.png");
   background-size: 100% 100%;
   color: #27262c;
@@ -52,47 +37,20 @@ li:hover {
   text-shadow: 0 -1px 0 #ef816c;
   font-weight: bold;
 }
+.main-nav li:active { transform: translateY(4px); }
 
-/* Click (active) effect */
-li:active {
-  transform: translateY(4px);
-}
-
-/* Button spring animation */
 @keyframes spring {
-  15% {
-    transform-origin: center center;
-    transform: scale(1.2, 1.1);
-  }
-  40% {
-    transform-origin: center center;
-    transform: scale(0.95, 0.95);
-  }
-  75% {
-    transform-origin: center center;
-    transform: scale(1.05, 1);
-  }
-  100% {
-    transform-origin: center center;
-    transform: scale(1, 1);
-  }
+  15% { transform-origin: center; transform: scale(1.2, 1.1); }
+  40% { transform-origin: center; transform: scale(0.95, 0.95); }
+  75% { transform-origin: center; transform: scale(1.05, 1); }
+  100% { transform-origin: center; transform: scale(1, 1); }
 }
 
-/* Link styling */
-.nav-link {
-  display: block;            /* makes the entire li clickable */
+/* Links fill the box */
+.main-nav .nav-link {
+  display: block;
   width: 100%;
   height: 100%;
   text-decoration: none;
-  color: inherit;            /* inherits li’s color */
-}
-
-/* Optional credit link */
-.shameless-plug {
-  position: absolute;
-  bottom: 10px;
-  right: 0;
-  padding: 8px 20px;
-  color: #ccc;
-  text-decoration: none;
+  color: inherit;
 }

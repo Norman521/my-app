@@ -1,5 +1,6 @@
 .welcome {
-    color: rgb(255, 255, 255);
-    font-size: 24px;
-    text-align: center;
+  color: var(--color-text);
+  font-size: 24px;
+  text-align: center;
+  margin: var(--space-4) 0;
 }

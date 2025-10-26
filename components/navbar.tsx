@@ -1,19 +1,26 @@
+// components/navbar.tsx
 import Link from "next/link";
 import "../css/navbar.css";
 
 export default function Navbar() {
   return (
-    <nav>
+    <nav className="main-nav">
       <ul>
-        <Link href="/" className="nav-item">
-          <li>Home</li>
-        </Link>
-        <Link href="/about" className="nav-item">
-          <li>About</li>
-        </Link>
-        <Link href="/contact" className="nav-item">
-          <li>Contact</li>
-        </Link>
+        <li>
+          <Link href="/" className="nav-link">
+            Home
+          </Link>
+        </li>
+        <li>
+          <Link href="/about" className="nav-link">
+            About
+          </Link>
+        </li>
+        <li>
+          <Link href="/contact" className="nav-link">
+            Contact
+          </Link>
+        </li>
       </ul>
     </nav>
   );

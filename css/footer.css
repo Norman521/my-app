@@ -1,0 +1,114 @@
+/* ===== Site Footer =====
+   Uses tokens from css/theme.css
+   - Dark bar to match your navbar
+   - Soft cards/links that align with the rest of the site
+*/
+
+.site-footer {
+  background: #000;               /* matches navbar */
+  color: #e5e7eb;
+  margin-top: var(--space-12);
+}
+
+/* Top area */
+.footer-top {
+  display: grid;
+  gap: var(--space-8);
+  padding: var(--space-12) 0;
+}
+@media (min-width: 1024px) {
+  .footer-top {
+    grid-template-columns: 5fr 5fr 2fr; /* brand | nav | social */
+    align-items: start;
+  }
+}
+
+/* Brand */
+.footer-brand {}
+.footer-title {
+  margin: 0 0 var(--space-3) 0;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: #fff;
+}
+.footer-blurb {
+  margin: 0;
+  max-width: 46ch;
+  color: #cbd5e1;                 /* slate-300-ish */
+  line-height: 1.6;
+}
+
+/* Navigation */
+.footer-nav {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(160px, 1fr));
+  gap: var(--space-8);
+}
+.footer-group {}
+.footer-heading {
+  margin: 0 0 var(--space-3) 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+.footer-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-link {
+  display: inline-block;
+  color: #e5e7eb;
+  text-decoration: none;
+  padding: 0.25rem 0;
+  transition: opacity .2s ease, transform .06s ease;
+}
+.footer-link:hover {
+  opacity: .9;
+  transform: translateX(1px);
+}
+
+/* Social */
+.footer-social {}
+.footer-icons { display: flex; gap: var(--space-4); }
+.footer-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  text-decoration: none;
+  transition: transform .06s ease, background .2s ease, opacity .2s ease;
+}
+.footer-icon:hover {
+  background: rgba(255,255,255,0.14);
+  opacity: .95;
+  transform: translateY(1px);
+}
+
+/* Bottom bar */
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  background: #000;
+}
+.footer-bottom-inner {
+  display: flex;
+  gap: var(--space-4);
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-4) 0;
+}
+.footer-copy, .footer-madeby {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #cbd5e1;
+}
+
+/* Light links on dark bg */
+.footer-bottom a, .site-footer a { color: #e5e7eb; }

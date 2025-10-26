@@ -1,118 +1,42 @@
-/* Section & theme */
-.section {
-  background: #ffffff;
-  color: #0f172a; /* zinc-900-ish */
-  padding: 3.5rem 0; /* ~py-14 */
-}
-@media (min-width: 768px) {
-  .section {
-    padding: 6rem 0; /* ~md:py-24 */
-  }
-}
+/* About / Team */
+.headerWrap { display: flex; justify-content: center; margin-bottom: 1.5rem; }
+@media (min-width: 768px) { .headerWrap { margin-bottom: 3rem; } }
+.headerInner { text-align: center; max-width: 560px; }
 
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-/* Header */
-.headerWrap {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 1.5rem;
-}
-@media (min-width: 768px) {
-  .headerWrap {
-    margin-bottom: 3rem;
-  }
-}
-.headerInner {
-  text-align: center;
-  max-width: 560px; /* ~sm:max-w-md */
-}
-.heading {
-  font-size: 1.875rem; /* ~text-3xl */
-  line-height: 1.1;
-  font-weight: 700;
-  margin-bottom: 1rem;
-}
-@media (min-width: 768px) {
-  .heading {
-    font-size: 45px; /* ~md:text-[45px] */
-  }
-}
-.intro {
-  margin: 0;
-  color: #334155; /* slate-700-ish */
-}
-
-/* Grid */
+/* Team grid */
 .grid {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  gap: 1.5rem; /* ~gap-6 */
+  gap: 1.5rem;
   text-align: center;
 }
-@media (min-width: 768px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr); /* md:col-span-2 */
-  }
-}
-@media (min-width: 1024px) {
-  .grid {
-    grid-template-columns: repeat(4, 1fr); /* lg:col-span-1 across 4 cols */
-  }
-}
-.gridCol {
-  /* acts like col-span-4/md:2/lg:1 from Tailwind version */
-}
+@media (min-width: 768px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .grid { grid-template-columns: repeat(4, 1fr); } }
 
 /* Card */
-.card {
-  background: transparent;
-}
+.card { background: transparent; }
 .avatar {
   display: block;
-  width: 230px;
-  height: 230px;
+  width: 160px;
+  height: 160px;
   object-fit: cover;
-  border-radius: 9999px; /* full */
+  border-radius: 9999px;
   margin: 0 auto;
 }
-.cardBody {
-  padding: 1.5rem 1rem; /* ~py-6 px-4 */
-}
-.name {
-  font-size: 1.25rem; /* text-2xl-ish */
-  font-weight: 600;
-  margin: 0 0 0.5rem 0;
-}
-.role {
-  margin: 0 0 0.25rem 0;
-  font-weight: 600;
-}
-.bio {
-  margin: 0;
-  opacity: 0.7;
-}
+.cardBody { padding: 1.5rem 1rem; }
+.name { font-size: 1.25rem; font-weight: 600; margin: 0 0 0.5rem 0; }
+.role { margin: 0 0 0.25rem 0; font-weight: 600; }
+.bio { margin: 0; opacity: 0.7; }
 
 /* Social */
-.social {
-  margin-top: 1.5rem;
-}
+.social { margin-top: 1.5rem; }
 .socialLink {
   display: inline-block;
   margin-right: 1rem;
   opacity: 0.6;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition: transform 0.3s, opacity 0.3s;
   text-decoration: none;
   color: inherit;
 }
-.socialLink:last-child {
-  margin-right: 0;
-}
-.socialLink:hover {
-  opacity: 1;
-  transform: translateY(4px);
-}
+.socialLink:last-child { margin-right: 0; }
+.socialLink:hover { opacity: 1; transform: translateY(4px); }

@@ -1,18 +1,11 @@
-import Image from "next/image";
-import Welcome from "../../components/welcome";
-import Link from "next/link";
+// app/contact/page.tsx
+import ContactSection from "../../components/contact";
 import Navbar from "../../components/navbar";
 
-export default function Home() {
+export default function ContactPage() {
   return (
     <>
-      <div>
-        <Navbar />
-        <Welcome text="This is the contact page " />
-        <Welcome text="Hello, World!" />
-        <Welcome text="This is a message." />
-        <Welcome text="Have a great day!" author="Norman" />
-      </div>
+      <ContactSection />
     </>
   );
 }

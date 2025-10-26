@@ -51,12 +51,7 @@ const portfolioList = [
 export default function Home() {
   return (
     <>
-      <div>
-        <Navbar />
-      </div>
-      <div>
-        <Portfolio categories={[]} items={portfolioList} />
-      </div>
+      <Portfolio categories={[]} items={portfolioList} />
     </>
   );
 }
