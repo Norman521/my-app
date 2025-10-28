@@ -4,10 +4,40 @@
     <meta charset="utf-8" />
     <title>Admin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- Decap CMS (formerly Netlify CMS) -->
-    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
+    <!-- 1) Tell Decap we will initialize it manually (must be BEFORE the script) -->
+    <script>
+      window.CMS_MANUAL_INIT = true;
+    </script>
+
+    <!-- 2) Load Decap CMS from a reliable CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/decap-cms@3.0.11/dist/decap-cms.js"></script>
+
+    <!-- 3) Initialize it explicitly with your config path -->
+    <script>
+      (function initCMS() {
+        function start() {
+          try {
+            // Point to your deployed YAML
+            window.CMS.init({ config: "/admin/config.yml" });
+          } catch (e) {
+            console.error("CMS init failed:", e);
+            document.body.innerHTML =
+              "<pre style='padding:16px;color:#c00'>CMS init failed. Open Console for details.</pre>";
+          }
+        }
+
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", start);
+        } else {
+          start();
+        }
+      })();
+    </script>
+
+    <style>
+      html,body{height:100%} body{margin:0;background:#fff}
+    </style>
   </head>
-  <body>
-    <!-- CMS mounts itself -->
-  </body>
+  <body></body>
 </html>
