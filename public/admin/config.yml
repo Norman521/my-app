@@ -1,19 +1,10 @@
-backend:
-  name: github
-  repo: Norman521/my-app # your repo name
-  branch: main
-  base_url: https://your-vercel-site.vercel.app
-  auth_endpoint: /api/auth # matches our API route
-
 media_folder: "public/uploads"
 public_folder: "/uploads"
 
 collections:
   - name: "gallery"
-    label: "Gallery"
-    folder: "content/gallery"
+    folder: "content/gallery" # ← matches code above
     create: true
-    slug: "{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime" }
