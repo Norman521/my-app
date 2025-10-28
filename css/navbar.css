@@ -1,56 +1,84 @@
-/* Navbar base */
+/* Scope to navbar only */
 .main-nav {
-  width: 100%;
-  background: #000;          /* dark bar, but no body override */
   position: sticky;
   top: 0;
   z-index: 10;
+  background: #000;
+  /* avoid status bar overlap on some phones */
+  padding-top: env(safe-area-inset-top, 0);
 }
 
-/* Navbar list */
 .main-nav ul {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: var(--space-4);
-  max-width: 1000px;
+  gap: 1.25rem;
   margin: 0 auto;
-  padding: var(--space-4) var(--space-8);
+  padding: 0.75rem 1.25rem;
+  list-style: none;
+  max-width: 1100px;
 }
 
-/* Items */
 .main-nav li {
-  padding: 0.75rem 1.5rem;
-  text-transform: uppercase;
-  color: #ebebeb;
-  cursor: pointer;
-  min-width: 80px;
-  transition: all 0.3s ease;
+  /* create a pill hit-area */
+  border-radius: 12px;
+  /* prevent transform/scale from clipping */
+  overflow: visible;
 }
 
-/* Hover effect (kept) */
-.main-nav li:hover {
-  background-image: url("https://scottyzen.sirv.com/Images/v/button.png");
-  background-size: 100% 100%;
-  color: #27262c;
-  animation: spring 300ms ease-out;
-  text-shadow: 0 -1px 0 #ef816c;
-  font-weight: bold;
-}
-.main-nav li:active { transform: translateY(4px); }
-
-@keyframes spring {
-  15% { transform-origin: center; transform: scale(1.2, 1.1); }
-  40% { transform-origin: center; transform: scale(0.95, 0.95); }
-  75% { transform-origin: center; transform: scale(1.05, 1); }
-  100% { transform-origin: center; transform: scale(1, 1); }
-}
-
-/* Links fill the box */
-.main-nav .nav-link {
+.nav-link {
   display: block;
-  width: 100%;
-  height: 100%;
+  padding: 0.65rem 1.25rem;
   text-decoration: none;
-  color: inherit;
+  color: #ebebeb;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+  border-radius: 12px;
+  position: relative;
+  /* smooth taps and focus */
+  transition: transform .15s ease, color .2s ease, background-color .2s ease, box-shadow .2s ease;
+}
+
+/* --- Desktop hover effect (CSS-only, no external image) --- */
+@media (hover: hover) and (pointer: fine) {
+  .main-nav li:hover .nav-link,
+  .main-nav li:focus-within .nav-link {
+    background: linear-gradient(180deg, #ff8a6b, #e56a52);
+    color: #27262c;
+    box-shadow: 0 6px 16px rgba(229, 106, 82, .35);
+    transform: translateY(-1px);
+  }
+}
+
+/* Touch devices: disable hover weirdness, keep a clean tap state */
+@media (hover: none) {
+  .main-nav li:hover .nav-link { /* neutralize ghost hover on mobile */
+    background: transparent;
+    box-shadow: none;
+    transform: none;
+  }
+  .main-nav li:active .nav-link {
+    background: #1a1a1a;
+    transform: translateY(1px);
+  }
+}
+
+/* Keyboard focus */
+.nav-link:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 2px;
+  border-radius: 12px;
+}
+
+/* Active page (from usePathname) */
+.main-nav li.active .nav-link {
+  background: linear-gradient(180deg, #ff8a6b, #e56a52);
+  color: #27262c;
+  box-shadow: 0 6px 16px rgba(229, 106, 82, .35);
+  font-weight: 700;
+}
+
+/* Optional: slightly larger tap targets on small screens */
+@media (max-width: 480px) {
+  .nav-link { padding: 0.7rem 1.1rem; }
 }
