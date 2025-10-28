@@ -21,7 +21,7 @@ export default function Portfolio({ categories, items }: PortfolioProps) {
               <p className="portfolio-description">
                 A showcase of my recent projects across various domains. Feel
                 free to explore and get inspired! I work on web apps, mobile
-                apps, UI/UX designs, and open-source tools — combining clean
+                apps, UI/UX designs, and open-source tools combining clean
                 design with performant code.
               </p>
 
